@@ -19,9 +19,9 @@ public interface People {
     @WebResult(name="person") 
     public Person readPerson(@WebParam(name="personId") int id);
 
-    // @WebMethod(operationName="getPeopleList")
-    // @WebResult(name="people") 
-    // public List<Person> getPeople();
+    @WebMethod(operationName="getPeopleList")
+     @WebResult(name="people") 
+     public List<Person> getPeople();
 
     // @WebMethod(operationName="createPerson")
     // @WebResult(name="personId") 

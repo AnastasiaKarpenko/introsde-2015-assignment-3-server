@@ -117,7 +117,7 @@
             </java>
         </target>
 
-        <target name="execute.client">
+        <target name="execute.client" depends="install">
             <echo message="client start introsde.rest.ehealth.client.ClientApp in ${build.dir}" />
             <java classname="introsde.rest.ehealth.client.ClientApp" classpath="${build.dir}" fork="true">
                 <arg value="$JAVA_OPTS  -cp" />

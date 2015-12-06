@@ -24,10 +24,10 @@ public class PeopleImpl implements People {
         return p;
     }
 
-    // @Override
-    // public List<Person> getPeople() {
-    //     return Person.getAll();
-    // }
+     @Override
+     public List<Person> getPeople() {
+         return Person.getAll();
+     }
 
     // @Override
     // public int addPerson(Person person) {
