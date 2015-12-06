@@ -37,6 +37,9 @@ public interface People {
      @WebResult(name="personId") 
      public int addPerson(@WebParam(name="person") Person person);
 
+    // @WebMethod(operationName="createPersonHealthProfile")
+    // @WebResult(name="hpId") 
+    // public int createPersonHP(@WebParam(name="personId") int id, @WebParam(name="healthProfile") LifeStatus hp);
     
 
     // @WebMethod(operationName="deletePerson")

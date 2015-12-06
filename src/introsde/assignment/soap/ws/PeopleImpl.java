@@ -42,8 +42,8 @@ public class PeopleImpl implements People {
      //Method #4 Create a new person
     @Override
     public int addPerson(Person person) {
-        Person.savePerson(person);
-        return person.getIdPerson();
+        Person newPerson = Person.savePerson(person);
+        return newPerson.getIdPerson();
      }
 
     

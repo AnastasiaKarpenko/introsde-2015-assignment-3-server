@@ -109,12 +109,14 @@ public class Person implements Serializable {
     }
 
     public static Person savePerson(Person person) {
-        List<LifeStatus> lifeStatusList = person.getLifeStatus();
+         List<LifeStatus> lifeStatusList = person.getLifeStatus();
+         if(lifeStatusList != null){
             for (int i = 0; i<lifeStatusList.size(); i++) {
                 LifeStatus lifeStatus = lifeStatusList.get(i);
                 lifeStatus.setPerson(person);
 
             }
+        }
 
         EntityManager em = LifeCoachDao.instance.createEntityManager();
         EntityTransaction tx = em.getTransaction();
