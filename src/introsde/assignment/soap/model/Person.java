@@ -15,7 +15,7 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlElementWrapper;
-import javax.xml.bind.annotation.XmlRootElement;
+
 import javax.xml.bind.annotation.XmlTransient;
 import javax.xml.bind.annotation.XmlType;
 
@@ -23,7 +23,7 @@ import javax.xml.bind.annotation.XmlType;
 @Entity  // indicates that this class is an entity to persist in DB
 @Table(name="Person") // to whole table must be persisted 
 @NamedQuery(name="Person.findAll", query="SELECT p FROM Person p")
-@XmlRootElement
+
 @XmlType(propOrder = { "idPerson", "name", "lastname", "birthdate", "lifeStatus"})
 public class Person implements Serializable {
     private static final long serialVersionUID = 1L;

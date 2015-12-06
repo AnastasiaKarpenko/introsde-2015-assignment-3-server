@@ -7,7 +7,7 @@ import java.io.Serializable;
 import java.util.List;
 
 import javax.persistence.*;
-import javax.xml.bind.annotation.XmlRootElement;
+
 import javax.xml.bind.annotation.XmlTransient;
 
 
@@ -19,7 +19,7 @@ import javax.xml.bind.annotation.XmlTransient;
 @Entity
 @Table(name="MeasureDefinition")
 @NamedQuery(name="MeasureDefinition.findAll", query="SELECT m FROM MeasureDefinition m")
-@XmlRootElement
+
 public class MeasureDefinition implements Serializable {
 	private static final long serialVersionUID = 1L;
 

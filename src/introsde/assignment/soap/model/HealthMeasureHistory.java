@@ -22,7 +22,7 @@ import javax.persistence.Table;
 import javax.persistence.TableGenerator;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-import javax.xml.bind.annotation.XmlRootElement;
+
 import javax.xml.bind.annotation.XmlTransient;
 
 
@@ -43,7 +43,7 @@ import javax.xml.bind.annotation.XmlTransient;
 
 
 
-@XmlRootElement
+
 public class HealthMeasureHistory implements Serializable {
 	private static final long serialVersionUID = 1L;
 
