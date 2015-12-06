@@ -12,6 +12,13 @@ import javax.jws.WebService;
     serviceName="PeopleService")
 public class PeopleImpl implements People {
 
+    // Method #1
+    @Override
+     public List<Person> getPeople() {
+         return Person.getAll();
+     }
+
+    // Method #2
     @Override
     public Person readPerson(int id) {
         System.out.println("---> Reading Person by id = "+id);
@@ -24,22 +31,21 @@ public class PeopleImpl implements People {
         return p;
     }
 
-     @Override
-     public List<Person> getPeople() {
-         return Person.getAll();
+     // Method #3
+    @Override
+    public int updatePerson(Person person) {
+        Person.updatePerson(person);
+        return person.getIdPerson();
      }
 
-    // @Override
-    // public int addPerson(Person person) {
-    //     Person.savePerson(person);
-    //     return person.getIdPerson();
-    // }
 
-    // @Override
-    // public int updatePerson(Person person) {
-    //     Person.updatePerson(person);
-    //     return person.getIdPerson();
-    // }
+     // @Override
+     // public int addPerson(Person person) {
+     //    Person.savePerson(person);
+     //    return person.getIdPerson();
+     // }
+
+    
 
     // @Override
     // public int deletePerson(int id) {

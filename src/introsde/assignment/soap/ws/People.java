@@ -15,21 +15,28 @@ import javax.jws.soap.SOAPBinding.Use;
 @WebService
 @SOAPBinding(style = Style.DOCUMENT, use=Use.LITERAL) //optional
 public interface People {
+    
+
+    // Method 1
+    @WebMethod(operationName="getPeopleList")
+    @WebResult(name="people") 
+    public List<Person> getPeople();
+
+    // Method 2
     @WebMethod(operationName="readPerson")
     @WebResult(name="person") 
     public Person readPerson(@WebParam(name="personId") int id);
 
-    @WebMethod(operationName="getPeopleList")
-     @WebResult(name="people") 
-     public List<Person> getPeople();
+    // Method 3
+    @WebMethod(operationName="updatePerson")
+    @WebResult(name="personId") 
+    public int updatePerson(@WebParam(name="person") Person person);
 
     // @WebMethod(operationName="createPerson")
     // @WebResult(name="personId") 
     // public int addPerson(@WebParam(name="person") Person person);
 
-    // @WebMethod(operationName="updatePerson")
-    // @WebResult(name="personId") 
-    // public int updatePerson(@WebParam(name="person") Person person);
+    
 
     // @WebMethod(operationName="deletePerson")
     // @WebResult(name="personId") 
