@@ -103,9 +103,9 @@
                 </fileset>
             </copy>
         </target>
-        <target name="start">
-            <echo message="app start introsde.rest.ehealth.App in ${build.dir}" />
-            <java classname="introsde.rest.ehealth.App" classpath="${build.dir}" fork="true">
+        <target name="start" depends="install">
+            <echo message="app start introsde.assignment.soap.endpoint.PeoplePublisher in ${build.dir}" />
+            <java classname="introsde.assignment.soap.endpoint.PeoplePublisher" classpath="${build.dir}" fork="true">
                 <arg value="$JAVA_OPTS  -cp" />
                 <classpath>
                     <path location="build" />

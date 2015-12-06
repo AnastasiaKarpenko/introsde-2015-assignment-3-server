@@ -8,7 +8,7 @@ import javax.jws.WebService;
 
 //Service Implementation
 
-@WebService(endpointInterface = "introsde.document.ws.People",
+@WebService(endpointInterface = "introsde.assignment.soap.ws.People",
     serviceName="PeopleService")
 public class PeopleImpl implements People {
 
