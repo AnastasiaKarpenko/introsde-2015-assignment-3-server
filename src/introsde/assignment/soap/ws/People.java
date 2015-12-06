@@ -17,24 +17,25 @@ import javax.jws.soap.SOAPBinding.Use;
 public interface People {
     
 
-    // Method 1
+    // Method #1 Get all the people
     @WebMethod(operationName="getPeopleList")
     @WebResult(name="people") 
     public List<Person> getPeople();
 
-    // Method 2
+    // Method #2 Read person with id = 1
     @WebMethod(operationName="readPerson")
     @WebResult(name="person") 
     public Person readPerson(@WebParam(name="personId") int id);
 
-    // Method 3
+    // Method #3 Update person with id = 1 
     @WebMethod(operationName="updatePerson")
     @WebResult(name="personId") 
     public int updatePerson(@WebParam(name="person") Person person);
 
-    // @WebMethod(operationName="createPerson")
-    // @WebResult(name="personId") 
-    // public int addPerson(@WebParam(name="person") Person person);
+     // Method #4 Create a new person
+     @WebMethod(operationName="createPerson")
+     @WebResult(name="personId") 
+     public int addPerson(@WebParam(name="person") Person person);
 
     
 
