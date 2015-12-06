@@ -47,17 +47,17 @@ public class PeopleImpl implements People {
      }
 
     
-
-    // @Override
-    // public int deletePerson(int id) {
-    //     Person p = Person.getPersonById(id);
-    //     if (p!=null) {
-    //         Person.removePerson(p);
-    //         return 0;
-    //     } else {
-    //         return -1;
-    //     }
-    // }
+     //Method #5 Delete a person
+    @Override
+    public int deletePerson(int id) {
+        Person p = Person.getPersonById(id);
+        if (p!=null) {
+            Person.removePerson(p);
+            return 0;
+        } else {
+            return -1;
+        }
+    }
 
     // @Override
     // public int updatePersonHP(int id, LifeStatus hp) {
