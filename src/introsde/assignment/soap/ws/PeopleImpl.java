@@ -79,6 +79,32 @@ public class PeopleImpl implements People {
         return HealthMeasureHistory.getHealthMeasureHistoryById(id);
     }
 
+    //Method #9 
+    @Override
+    public HealthMeasureHistory createNewMeasure(int id, String measureType, HealthMeasureHistory newHealthMeasureHistory){
+        Person person = Person.getPersonById(id);
+        List<LifeStatus> lifeStatusList = person.getLifeStatus();
+        LifeStatus lifeStatus = null;
+            for (int i = 0; i<lifeStatusList.size(); i++) {
+                LifeStatus lifeStatusTemp = lifeStatusList.get(i); 
+                String measureName = lifeStatusTemp.getMeasure();  
+                if (measureName.equals(measureType)) {
+                    lifeStatus = lifeStatusTemp;
+                }
+
+            }
+
+        String oldMeasureValue = lifeStatus.getValue();
+        LifeStatus newLifeStatus = lifeStatus;
+        newLifeStatus.setValue(newHealthMeasureHistory.getValue());
+        lifeStatus.updateLifeStatus(newLifeStatus);           
+        newHealthMeasureHistory.setValue(oldMeasureValue);
+        newHealthMeasureHistory.setPerson(person);
+        newHealthMeasureHistory.setMeasureName(measureType);
+        return HealthMeasureHistory.saveHealthMeasureHistory(newHealthMeasureHistory);
+    } 
+
+
 
     // @Override
     // public int updatePersonHP(int id, LifeStatus hp) {
