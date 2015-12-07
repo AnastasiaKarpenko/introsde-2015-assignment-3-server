@@ -53,6 +53,10 @@ public interface People {
     @WebResult(name="measureTypes") 
     public List<MeasureDefinition> readMeasureTypes();
 
+    //Method #8 Read value of measure type history mid=1 
+    @WebMethod(operationName="readMeasureHistoryId")
+    @WebResult(name="measures") 
+    public HealthMeasureHistory readMeasureHistoryId(@WebParam(name="historyMeasureId") int id);
 
     // @WebMethod(operationName="updatePersonHealthProfile")
     // @WebResult(name="hpId") 
