@@ -65,6 +65,13 @@ public class PeopleImpl implements People {
         return HealthMeasureHistory.getMeasureTypeById(id, measure);
     }
 
+
+    //Method #7 Read all measure types
+    @Override
+    public List<MeasureDefinition> readMeasureTypes() {
+        return MeasureDefinition.getAll();
+    }
+
     // @Override
     // public int updatePersonHP(int id, LifeStatus hp) {
     //     LifeStatus ls = LifeStatus.getLifeStatusById(hp.getIdMeasure());

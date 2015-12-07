@@ -48,6 +48,12 @@ public interface People {
     @WebResult(name="healthMeasure") 
     public List<HealthMeasureHistory> readPersonHistory(@WebParam(name="personId") int id,  @WebParam(name="measureType") String measure);
 
+    //Method #7 Read all measure types
+    @WebMethod(operationName="readMeasureTypes")
+    @WebResult(name="measureTypes") 
+    public List<MeasureDefinition> readMeasureTypes();
+
+
     // @WebMethod(operationName="updatePersonHealthProfile")
     // @WebResult(name="hpId") 
     // public int updatePersonHP(@WebParam(name="personId") int id, @WebParam(name="healthProfile") LifeStatus hp);
