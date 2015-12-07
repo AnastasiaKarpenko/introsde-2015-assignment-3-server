@@ -1,6 +1,6 @@
 package introsde.assignment.soap.ws;
-import introsde.assignment.soap.model.LifeStatus;
-import introsde.assignment.soap.model.Person;
+import introsde.assignment.soap.model.*;
+
 
 import java.util.List;
 
@@ -33,15 +33,20 @@ public interface People {
     public int updatePerson(@WebParam(name="person") Person person);
 
      // Method #4 Create a new person
-     @WebMethod(operationName="createPerson")
-     @WebResult(name="personId") 
-     public int addPerson(@WebParam(name="person") Person person);
+    @WebMethod(operationName="createPerson")
+    @WebResult(name="personId") 
+    public int addPerson(@WebParam(name="person") Person person);
 
 
      //Method #5 Delete a person
     @WebMethod(operationName="deletePerson")
     @WebResult(name="deletedPersonId") 
     public int deletePerson(@WebParam(name="personId") int id);
+
+    //Method #6 Read person history
+    @WebMethod(operationName="readPersonHistory")
+    @WebResult(name="healthMeasure") 
+    public List<HealthMeasureHistory> readPersonHistory(@WebParam(name="personId") int id,  @WebParam(name="measureType") String measure);
 
     // @WebMethod(operationName="updatePersonHealthProfile")
     // @WebResult(name="hpId") 

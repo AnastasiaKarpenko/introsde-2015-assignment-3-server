@@ -1,6 +1,6 @@
 package introsde.assignment.soap.ws;
-import introsde.assignment.soap.model.LifeStatus;
-import introsde.assignment.soap.model.Person;
+import introsde.assignment.soap.model.*;
+
 
 import java.util.List;
 
@@ -39,7 +39,7 @@ public class PeopleImpl implements People {
      }
 
 
-     //Method #4 Create a new person
+     // Method #4 Create a new person
     @Override
     public int addPerson(Person person) {
         Person newPerson = Person.savePerson(person);
@@ -47,7 +47,7 @@ public class PeopleImpl implements People {
      }
 
     
-     //Method #5 Delete a person
+     // Method #5 Delete a person
     @Override
     public int deletePerson(int id) {
         Person p = Person.getPersonById(id);
@@ -57,6 +57,12 @@ public class PeopleImpl implements People {
         } else {
             return -1;
         }
+    }
+
+    //Method #6 Read person history
+    @Override
+    public List<HealthMeasureHistory> readPersonHistory(int id, String measure) {
+        return HealthMeasureHistory.getMeasureTypeById(id, measure);
     }
 
     // @Override
