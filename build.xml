@@ -15,7 +15,7 @@
        # The target "download-ivy" and "install-ivy" will download the ivy jar and place it in the "ivy" folder
        # 
 -->
-    <project name="sdelab06" default="compile" basedir="." xmlns:ivy="antlib:org.apache.ivy.ant">
+    <project name="sdelab06" basedir="." xmlns:ivy="antlib:org.apache.ivy.ant">
         <!-- PART 1: Ivy properties, download, installation and configuration -->
         <property name="ivy.install.version" value="2.4.0-rc1" />
         <property name="ivy.jar.dir" value="${basedir}/ivy" />
@@ -106,20 +106,6 @@
         <target name="start" depends="install">
             <echo message="app start introsde.assignment.soap.endpoint.PeoplePublisher in ${build.dir}" />
             <java classname="introsde.assignment.soap.endpoint.PeoplePublisher" classpath="${build.dir}" fork="true">
-                <arg value="$JAVA_OPTS  -cp" />
-                <classpath>
-                    <path location="build" />
-                    <fileset dir="WebContent/WEB-INF/lib">
-                        <include name="**/*.jar" />
-                        <include name="*.jar" />
-                    </fileset>
-                </classpath>
-            </java>
-        </target>
-
-        <target name="execute.client" depends="install">
-            <echo message="client start introsde.rest.ehealth.client.ClientApp in ${build.dir}" />
-            <java classname="introsde.rest.ehealth.client.ClientApp" classpath="${build.dir}" fork="true">
                 <arg value="$JAVA_OPTS  -cp" />
                 <classpath>
                     <path location="build" />
